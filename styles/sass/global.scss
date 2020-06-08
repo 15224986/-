@@ -1,0 +1,203 @@
+@charset "utf-8";
+// **************************** variables 定义的变量 **********************************
+@import 'components/variables';
+
+// **************************** mixin sass的方法 **********************************
+@import 'components/mixin';
+
+// **************************** reset 引入重置样式 **********************************
+@import 'components/reset';
+
+
+
+
+/**
+ * @effect      各种组件，提供基础的布局和样式 （大的框架和多数页面要用的样式）
+ * @author      作者
+ * @version     版本号
+ * @date        修改时间
+ * @param       参数
+ * @example     例子
+ * @link        链接
+ * @namespace   命名空间
+ * @requires    依赖
+ * @return      返回值
+ *
+ */
+/**************************** scrollbar 滚动条的样式 **********************************/
+@import 'components/scrollbar';
+
+/**************************** bootstrap 插件相关的样式 **********************************/
+@import 'components/bootstrap';
+
+/**************************** icon 自定义图标的样式 **********************************/
+@import 'components/icons';
+
+/**************************** color 各种颜色（背景色、文字颜色）的样式 **********************************/
+@import 'components/color';
+
+/**************************** color 各种颜色（背景色、文字颜色）的样式 **********************************/
+@import 'components/alert';
+
+/**************************** flying 双飞翼布局的样式 **********************************/
+@import 'components/flying';
+
+/**************************** panel 面版的样式 **********************************/
+@import 'components/panel';
+
+/***************************** tabs 循环切换的样式 ***********************************/
+@import 'components/tabs';
+
+/**************************** badge 徽章的样式 **********************************/
+@import 'components/badge';
+
+/**************************** form 相关的样式 **********************************/
+@import 'components/form';
+
+/**************************** btn 按钮相关的样式 **********************************/
+@import 'components/btn';
+
+/**************************** grid 栅格系统样式 **********************************/
+@import 'components/grid';
+
+/**************************** list 列表的样式 **********************************/
+@import 'components/list';
+
+/**************************** table 表格相关的样式 **********************************/
+@import 'components/table';
+
+/**************************** pagination 分页器的样式 **********************************/
+@import 'components/pagination';
+
+/***************************** project 项目本身的样式 ***********************************/
+@import 'components/project';
+
+/***************************** index 首页样式 ***********************************/
+@import 'components/index';
+
+
+/**
+ * 表格顶部条件框的样式
+ */
+.search-box{
+	position: relative;
+	min-height: 44px;
+	.form-line{
+		margin-top: 8px;
+		margin-left: 20px;
+		.form-content{
+			padding-bottom: 8px;
+		}
+		.form-group .btn{
+			margin-bottom: 8px;
+		}
+	}
+	.search-tools {
+	    position: absolute;
+	    right: 10px;
+	    top: 8px;
+	}
+}
+
+
+/**
+ * 树的样式
+ */
+.ztree{
+	padding: 5px 6px;
+	li{
+		a{
+			color: #cfe7ff;
+			&.curSelectedNode {
+				background-color: #0f2b4d;
+				border: 1px #405470 solid;
+			}
+		}
+	}
+}
+.ztree-search{
+	padding: 9px 0 5px 9px;
+	.input-box{
+		width: 126px;
+		display: inline-block;
+	}
+	.btn {
+		position: relative;
+		top: -1px;
+	}
+}
+
+
+
+/***************************** extend 的方法 ***********************************/
+%clearfix {
+    @include clearfix;
+}
+%block{
+    display: block;
+}
+
+
+
+
+
+
+.hide {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+
+.text-center{
+	text-align: center;
+}
+@for $i from 0 through 8 {
+    @if $i % 2 == 0 {
+        .m-#{$i} {
+            margin: #{$i}px !important;
+        }
+        // margin-top
+        .m-t-#{$i} {
+            margin-top: #{$i}px !important;
+        }
+        // margin-bottom
+        .m-b-#{$i} {
+            margin-bottom: #{$i}px !important;
+        }
+        // margin-left
+        .m-l-#{$i} {
+            margin-left: #{$i}px !important;
+        }
+        // margin-right
+        .m-r-#{$i} {
+            margin-right: #{$i}px !important;
+        }
+    }
+}
+@for $i from 1 through 5 {
+   .m-#{$i*10} {
+        margin: #{$i*10}px !important;
+    }
+    // margin-top
+    .m-t-#{$i*10} {
+        margin-top: #{$i*10}px !important;
+    }
+    // margin-bottom
+    .m-b-#{$i*10} {
+        margin-bottom: #{$i*10}px !important;
+    }
+    // margin-left
+    .m-l-#{$i*10} {
+        margin-left: #{$i*10}px !important;
+    }
+    // margin-right
+    .m-r-#{$i*10} {
+        margin-right: #{$i*10}px !important;
+    }
+}
+
+
+
+
+

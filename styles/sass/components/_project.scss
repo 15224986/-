@@ -1,0 +1,371 @@
+@charset "utf-8";
+html,
+body,
+#page-container{
+	width: 100%;
+	height: 100%;
+	position: relative;
+}
+// #page-container{
+// 	width: 1910px;
+// 	height: 1070px;
+// }
+/**
+ * 页面的背景样式
+ */
+.page-bg-default{
+    background-image: url(../../images/bg-default.jpg);
+}
+
+/**************************** 页面布局 **********************************/
+$sidebar-width: 258px;
+$second-width: 230px;
+$assist-width: 310px;
+$header-height: 50px;
+
+// 左导航
+#page-sidebar{
+	width: $sidebar-width;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	top: 0;
+	background-color: rgba($color: #192029, $alpha: 0.9);
+	z-index: 99;
+	@include transition-all;
+	.page-logo{
+		height: 160px;
+		background-color: #064989;
+		background-image: url(../../images/page-logo_03.png);
+		background-repeat: no-repeat;
+		background-position: center;
+	}
+	.page-sidebar-toggle{
+		display: block;
+		width: 24px;
+		height: 20px;
+		position: absolute;
+		left: 100%;
+		top: 16px;
+		margin-left: -12px;
+		background-color: #ffaa45;
+		text-align: center;
+		.icon-toggl{
+			top: -3px;
+			left: -1px;
+		}
+	}
+}
+
+// 顶部
+#page-header{
+	position: absolute;
+	left: $sidebar-width;
+	top: 0;
+	right: 0;
+	background-color: rgba($color: #064989, $alpha: 0.66);
+	@extend %clearfix;
+	@include transition-all;
+	.page-sign-out{
+		float: right;
+		width: 50px;
+		height: $header-height;
+		background-color: #d38e22;
+		text-align: center;
+		.icon-sign-out{
+			top: 14px;
+		}
+	}
+	.page-describe{
+		float: right;
+	}
+	.page-describe-list{
+		float: left;
+		margin-right: 20px;
+		line-height: $header-height;
+		color: #d9e6ff;
+		dt,
+		dd{
+			float: left;
+		}
+		dt{
+			font-weight: 700;
+		}
+		.icon-gale{
+			top: 3px;
+		}
+		.icon-home{
+			margin-right: 8px;
+			top: 3px;
+		}
+		.dropdown{
+			> a{
+				color: #fffc00;
+			}
+			.icon-delta{
+				top: -2px;
+				margin-left: 2px;
+			}
+			&.open{
+				.icon-delta{
+					background-position: -471px -58px;
+				}
+			}
+		}
+	}
+	dl.page-describe-list,
+	a.page-describe-list{
+		margin-right: 28px;
+	}
+	a.page-describe-list{
+		color: #00eaff;
+		&:hover{
+			text-decoration: underline;
+		}
+		.icon-set{
+			margin-right: 6px;
+		}
+	}
+	.page-describe-early-warning{
+		margin-left: 8px;
+		font-weight: 700;
+	}
+}
+
+// 中间
+#page-bodier{
+	position: absolute;
+	left: $sidebar-width;
+	top: $header-height;
+	right: 0;
+	bottom: 0;
+	.page-assist{
+		width: $assist-width;
+		position: absolute;
+		right: 0;
+		top: 20px;
+		bottom: 0;
+		z-index: 99;
+		.panel{
+			margin-right: 20px;
+		}
+	}
+	.page-footer{
+		position: absolute;
+		left: $sidebar-width + 20px;
+		right: $assist-width + 20px;
+		bottom: 0;
+		z-index: 99;
+		@include transition-all;
+	}
+	.page-left-top{
+		position: absolute;
+		left: $sidebar-width + 40px;
+		top: 20px;
+		z-index: 99;
+	}
+}
+.index-page{
+	#page-bodier{
+		left: 0;
+	}
+}
+
+#page-second{
+	width: $second-width;
+	position: absolute;
+	left: $sidebar-width + 20;
+	top: $header-height + 20;
+	bottom: 20px;
+	border: 1px solid #164d81;
+	background-color: rgba(#0d3154, 0.6);
+	overflow: auto;
+	+ #page-bodier{
+		left: $sidebar-width + $second-width + 20;
+	}
+}
+
+
+.page-container{
+	height: 100%;
+	@include displayFlex;
+	@include boxOrient;
+}
+.page-bd{
+	margin: 20px;
+	position: relative;
+	@include displayFlexNumber;
+	overflow: auto;
+	border: 1px solid #164d81;
+	background-color: rgba(#0d3154, 0.6);
+}
+.page-hd{
+	margin: 20px 20px 0;
+	border: 1px solid #164d81;
+	background-color: rgba(#0d3154, 0.6);
+}
+.page-ft{
+	margin: 0 20px 20px;
+	border: 1px solid #164d81;
+	background-color: rgba(#0d3154, 0.6);
+}
+
+/**
+ * 左导航的关闭效果
+ */
+.page-sidebar-hide{
+	#page-sidebar{
+		left: -$sidebar-width;
+		.page-sidebar-toggle{
+			margin-left: 0;
+		}
+	}
+	#page-header{
+		left: 0;
+	}
+	#page-bodier .page-footer{
+		left: 20px;
+	}
+}
+
+// left-nav 左侧导航的样式
+.left-nav{
+    height: calc(100% - 160px);
+    overflow-y: auto;
+	overflow-x: hidden;
+    a{
+        display: block;
+    }
+    >ul ul{
+        display: none;
+        &.open{
+            display: block;
+        }
+    }
+    // 一级导航
+    >ul>li>a{
+        padding-left: 32px;
+        line-height: 42px;
+        color: #d4e8ff;
+        position: relative;
+		border-left: rgba($color: #000000, $alpha: 0) 4px solid;
+		
+		.icon-home {
+		    top: 2px;
+		}
+		.icon-staff {
+		    top: 2px;
+		}
+		.icon-rules {
+		    top: 6px;
+		}
+		.icon-early-warning {
+		    top: 4px;
+		}
+		.icon-patrol {
+		    top: 4px;
+		}
+		.icon-history {
+		    top: 3px;
+		}
+		.icon-duty {
+		    top: 4px;
+		}
+		.icon-book {
+		    top: 3px;
+		}
+		.icon-caret-right{
+			position: absolute;
+			right: 20px;
+			top: 17px;
+			display: none;
+		}
+		
+        &:hover,
+        &.active{
+            color: #89b2ff;
+            background-color: #1f2d48;
+			border-left-color: #89b2ff;
+			
+			.icon-home {
+			    background-position: -37px -44px;
+			}
+			.icon-staff {
+			    background-position: -76px -44px;
+			}
+			.icon-rules {
+			    background-position: -123px -44px;
+			}
+			.icon-early-warning {
+			    background-position: -165px -44px;
+			}
+			.icon-patrol {
+			    background-position: -210px -45px;
+			}
+			.icon-history {
+			    background-position: -255px -44px;
+			}
+			.icon-duty {
+			    background-position: -301px -45px;
+			}
+			.icon-book {
+			    background-position: -347px -44px;
+			}
+        }
+        &>.icon{
+            margin-right: 6px;
+        }
+        >.caret{
+            position: absolute;
+            right: 18px;
+            top: 50%;
+            margin-top: -3px;
+        }
+    }
+	>ul>li.leaf>a{
+	    &:hover,
+	    &.active{
+			.icon-caret-right{
+				display: inline-block;
+			}
+	    }
+	}
+
+    // 二级导航
+    >ul>li>ul>li>a{
+        padding-left: 64px;
+        line-height: 34px;
+        color: #8faac8;
+		position: relative;
+		.icon-caret-right{
+			position: absolute;
+			right: 20px;
+			top: 13px;
+			display: none;
+		}
+		
+        &:hover,
+        &.active{
+            color: #89b2ff;
+			.icon-menu {
+			    background-position: -387px -47px;
+				width: 11px;
+				height: 11px;
+			}
+			.icon-caret-right{
+				display: inline-block;
+			}
+        }
+		&>.icon{
+		    margin-right: 6px;
+		}
+    }
+}
+// 结束
+
+
+
+
+
+
+

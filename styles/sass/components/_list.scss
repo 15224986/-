@@ -1,0 +1,39 @@
+@charset "utf-8";
+
+// **************************** list 列表的样式 **********************************
+
+// 图片列表
+.list-item-meta{
+	@include displayFlex;
+	@include boxOrient($orient:horizontal);
+}
+.list-item-meta-content{
+    position: relative;
+    @include displayFlexNumber;
+}
+.list-item-meta-content-inner{
+    @include box-inner;
+}
+
+// 编辑列表
+.list-item-action{
+	@extend %clearfix;
+	dt{
+		float: right;
+		padding-left: 6px;
+		color: #6293c1;
+	}
+	dd{
+		@include text-overflow;
+	}
+}
+
+// 结束
+
+
+
+
+
+
+
+

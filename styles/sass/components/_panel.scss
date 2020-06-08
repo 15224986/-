@@ -1,0 +1,32 @@
+@charset "utf-8";
+
+// ************************* panel 面版的样式 ****************************
+.panel{
+    margin-bottom: 20px;
+	background-color: rgba($color: #064989, $alpha: .8);
+}
+
+.panel-head{
+    position: relative;
+}
+.panel-inner{
+    
+}
+.panel-title{
+    @include lineblock;
+    margin: 11px 0 11px 12px;
+    height: 14px;
+    line-height: 14px;
+    font-size: 14px;
+    font-weight: 700;
+    border-left: #6293c1 4px solid;
+    padding-left: 6px;
+}
+
+.panel-body{
+    border: #1b538a 1px solid;
+	padding: 11px;
+}
+// 结束
+
+
