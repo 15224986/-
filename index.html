@@ -1,0 +1,1567 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <!--[include "./public/head-meta.html"]-->
+    <meta charset="utf-8" />
+    <!-- 使用最新版的IE浏览器 -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- 国产浏览器高速模式 -->
+    <meta name="renderer" content="webkit">
+    <!-- 在手机上原比例显示，不可以放大缩小 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no, minimum-scale=1, maximum-scale=1" />
+    <!-- 则手机号码不被显示为拨号链接 -->
+    <meta name="format-detection" content="telephone=no" />
+    <!-- 清除浏览器中的缓存，它和其它几句合起来用，就可以使你再次进入曾经访问过的页面时，ie浏览器必须从服务端下载最新的内容，达到刷新的效果。 -->
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Cache-Control" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <!--[/include]-->
+    <title>电子揭示板</title>
+    
+    <!--[include "./public/head-link.html"]-->
+    <!-- IE 老版本浏览器支持css的新属性 html5shiv 支持 html5标签 respond 支持 @media 媒体查询 -->
+    <!--[if lt IE 10]>
+        <script src="vendor/html5/html5shiv.min.js" type="text/javascript"></script>
+        <script src="vendor/html5/respond.min.js" type="text/javascript"></script>
+    <![endif]-->
+    <script type="text/javascript" src="vendor/jquery-1.11.3.min.js"></script>
+    <!-- 项目封装 -->
+    <script type="text/javascript" src="scripts/widget.min.js"></script>
+	
+	<!-- livequery -->
+	<script type="text/javascript" src="vendor/livequery-2.0.0/jquery.livequery.min.js"></script>
+    
+    <!-- 日期处理类库 -->
+    <script type="text/javascript" src="vendor/moment/moment.min.js"></script>
+    <!-- 时间插件 -->
+    <link rel="stylesheet" type="text/css" href="vendor/My97DatePicker/skin/WdatePicker.css">
+    <script type="text/javascript" src="vendor/My97DatePicker/WdatePicker.js"></script>
+    <!-- 下拉插件 多选 -->
+    <link rel="stylesheet" type="text/css" href="vendor/select2-4.0.2/select2.css">
+    <script type="text/javascript" src="vendor/select2-4.0.2/select2.js"></script>
+    <script type="text/javascript" src="vendor/select2-4.0.2/select2-Initials.js"></script>
+    <script type="text/javascript" src="vendor/select2-4.0.2/i18n/zh-CN.js"></script><!-- 中文提示 -->
+    <!-- 多选和单选的美化 -->
+    <link rel="stylesheet" type="text/css" href="vendor/icheck/icheck.css">
+    <script type="text/javascript" src="vendor/icheck/icheck.js"></script>
+    <!-- 上传附件的组件 -->
+    <link rel="stylesheet" type="text/css" href="vendor/webuploader/diyUpload.css">
+    <script type="text/javascript" src="vendor/webuploader/webuploader.js"></script>
+    <script type="text/javascript" src="vendor/webuploader/diyUpload.js"></script>
+    <!-- 表单验证 -->
+    <link rel="stylesheet" type="text/css" href="vendor/Validform/Validform_v5.css">
+    <script type="text/javascript" src="vendor/Validform/Validform_v5.3.2.js"></script>
+    <!-- bootstrap 的 js -->
+    <script src="vendor/bootstrap/bootstrap.js"></script>
+    <script src="vendor/bootstrap/bootstrap-hover-dropdown.js"></script>
+    <!-- jquery-ui-abridged 由于jq-ui的方法很多用不上还会占用资源和与别的插件冲突，把不用的移除了 -->
+    <script type="text/javascript" src="vendor/jquery-ui-1.9.2/jquery-ui-abridged.js"></script>
+	<!-- 放大缩小 -->
+	<link href="vendor/smoothZoom/jquery.smoothZoom.css" rel="stylesheet">
+	<script src="vendor/smoothZoom/jquery.smoothZoom.min.js"></script> 
+	
+	
+    <!-- 项目需求的特殊样式 -->
+    <link rel="stylesheet" type="text/css" href="styles/css/global.css" />
+    <script type="text/javascript" src="scripts/common.min.js"></script>
+    <!--[/include]-->
+	
+	
+	<!-- 股道的数据信息 -->
+	<script src="data/track.js"></script>
+	
+
+</head>
+<body class="page-bg-default">
+	
+    <!-- page-container start -->
+    <div id="page-container" class="index-page">
+		
+		<!-- page-sidebar start -->
+		<aside id="page-sidebar">
+		    <div class="page-logo">
+				<a class="page-sidebar-toggle" href="javascript:;">
+					<i class="icon icon-toggl"></i>
+				</a>
+			</div>
+			<div class="left-nav" data-toggle="left-nav">
+				<ul>
+				    <li><a href="table.html"><i class="icon icon-home"></i>首页 <i class="icon icon-caret-right"></i></a></li>
+				    <li><a href="form.html"><i class="icon icon-staff"></i>人员管控 <i class="icon icon-caret-right"></i></a></li>
+				    <li><a href="text.html"><i class="icon icon-rules"></i>规章管理 <i class="icon icon-caret-right"></i></a></li>
+				    <li><a href="bootstrap.html"><i class="icon icon-early-warning"></i>预警记录 <i class="icon icon-caret-right"></i></a></li>
+				    <li><a href="icons.html"><i class="icon icon-patrol"></i>巡检记录 <i class="icon icon-caret-right"></i></a></li>
+				    <li><a href="widget.html"><i class="icon icon-history"></i>历史记录 <i class="icon icon-caret-right"></i></a></li>
+				    <li><a href="Container.html"><i class="icon icon-duty"></i>在岗记录 <i class="icon icon-caret-right"></i></a></li>
+				    <li><a href="javascript:;"><i class="icon icon-book"></i>设备台账 <i class="icon icon-caret-right"></i></a>
+				        <ul>
+				            <li><a href="帮助文档-项目规则.html"><i class="icon icon-menu"></i>铁鞋台账 <i class="icon icon-caret-right"></i></a></li>
+				            <li><a href="帮助文档-修改日志.html"><i class="icon icon-menu"></i>紧固器台账 <i class="icon icon-caret-right"></i></a></li>
+				        </ul>
+				    </li>
+				</ul>
+			</div>
+		</aside>
+		<!-- page-sidebar end -->
+		
+		<!-- page-header start -->
+		<header id="page-header">
+			<a href="javascript:;" class="page-sign-out">
+				<i class="icon icon-sign-out"></i>
+			</a>
+			<div class="page-describe">
+				<div class="page-describe-list">
+					<i class="icon icon-gale"></i>
+				</div>
+				<p class="page-describe-list">天气：多云转晴</p>
+				<p class="page-describe-list">温度：12 C~24 C</p>
+				<p class="page-describe-list">风速：西南风5~6级 <span class="page-describe-early-warning text-orange">大风橙色预警</span></p>
+				<dl class="page-describe-list">
+					<dt><i class="icon icon-home"></i>车站：</dt>
+					<dd>
+						<div class="dropdown">
+						    <a data-toggle="dropdown" href="javascript:;">资阳站 <i class="icon icon-delta"></i></a>
+						    <ul class="dropdown-menu dropdown-menu-right">
+						        <li><a href="#">资阳站1</a></li>
+						        <li><a href="#">资阳站2</a></li>
+						        <li><a href="#">资阳站3</a></li>
+						        <li role="separator" class="divider"></li>
+						        <li><a href="#">资阳站4</a></li>
+						    </ul>
+						</div>
+					</dd>
+				</dl>
+				<dl class="page-describe-list">
+					<dt>所属单位：</dt>
+					<dd>成都车务段</dd>
+				</dl>
+				<a href="javascript:;" class="page-describe-list"><i class="icon icon-set"></i> 基础设置</a>                         
+			</div>	
+		</header>
+		<!-- page-header end -->
+		
+		<!-- page-bodier start -->
+		<div id="page-bodier">
+			<section class="map-box" id="mapbox">
+			    <div class="map-wrap" id="mapwrap">
+			        <div id="image" class="map-image">
+						<img class="map-img" src="images/map/资阳.png" alt="">
+						<!-- 磁贴 -->
+						<div id="stockToolBox" class="stock-tool-box"></div>
+						<!-- 股道 -->
+						<div class="stock-market"></div>
+						<!-- 火车 -->
+						<div class="stock-train"></div>
+					</div>
+				</div>
+			</section>			
+	
+			<section class="page-assist">
+				<div class="flexbox-vertical">
+					<div class="flexbox-head">
+						<section class="panel">
+							<div class="moc-current-time">
+								<p><span id="currentDay">2010年5月10日</span><span id="currentWeek">星期四</span></p>
+								<div>
+									<p id="currentHour">18</p>
+									<span>：</span>
+									<p id="currentMinute">26</p>
+									<span>：</span>
+									<p id="currentSecond">51</p>
+								</div>
+								<a class="moc-btn" id="messageBtn" href="javascript:;">
+									<i class="icon icon-message"></i>
+									<span class="badge badge-cir badge-info">1</span>
+								</a>
+								<a class="btn btn-info" href="javascript:;">常用规章</a>
+							</div>
+						</section>
+						<section class="panel">
+							<div class="panel-head">
+							   <h2 class="panel-title">安全日历</h2>
+							</div>
+							<div class="panel-body">
+								<div class="security-calendar-search">
+									<form class="form-line">
+										<input type="text" class="input-date" onclick="WdatePicker({dateFmt:'yyyy/MM/dd'})" placeholder="开始时间">
+										<span class="form-label-static">至</span>
+										<input type="text" class="input-date" onclick="WdatePicker({dateFmt:'yyyy/MM/dd'})" placeholder="结束时间">
+									    <a class="btn btn-info" href="javascript:;">搜索</a>
+									</form>
+								</div>
+								<div class="security-calendar-list">
+									<dl class="list-item-action">
+										<dt><strong class="text-orange">126</strong>天</dt>
+										<dd>无责任一般A类及以上交通事故    </dd>
+									</dl>
+									<dl class="list-item-action">
+										<dt><strong class="text-aqua">89</strong>天</dt>
+										<dd>无责任一般B类铁路交通事故</dd>
+									</dl>
+									<dl class="list-item-action">
+										<dt><strong class="text-aqua">96</strong>天</dt>
+										<dd>无责任一般C类铁路交通事故</dd>
+									</dl>
+									<dl class="list-item-action">
+										<dt><strong class="text-orange">91</strong>天</dt>
+										<dd>无责任一般D类铁路交通事故</dd>
+									</dl>
+									<dl class="list-item-action">
+										<dt><strong class="text-red">1224</strong>天</dt>
+										<dd>无责任职工死亡事故</dd>
+									</dl>
+									<dl class="list-item-action">
+										<dt><strong class="text-red">1443</strong>天</dt>
+										<dd>无责任职工重伤事故</dd>
+									</dl>
+									<dl class="list-item-action">
+										<dt><strong class="text-orange">99</strong>天</dt>
+										<dd>无责任职工轻伤事故</dd>
+									</dl>
+								</div>
+							</div>
+						</section>
+					</div>
+					<div class="flexbox-body">
+						<div class="flexbox-body-inner">
+							<div class="moc-tabs record-column">
+								<ul class="moc-tabs-content" tabs-title="在岗人员">
+									<li class="list-item-meta">
+										<div class="list-item-meta-avatar">
+											<div class="image-box">
+												<img src="images/bg-default.jpg" alt="">
+											</div>
+										</div>
+										<div class="list-item-meta-content">
+											<p class="text">张三</p>
+											<p class="text">助理值班员</p>
+											<p class="text">2020-01-06 18：25：00</p>
+										</div>
+									</li>
+									<li class="list-item-meta">
+										<div class="list-item-meta-avatar">
+											<div class="image-box">
+												<img src="images/bg-default.jpg" alt="">
+											</div>
+										</div>
+										<div class="list-item-meta-content">
+											<p class="text">张三</p>
+											<p class="text">助理值班员</p>
+											<p class="text">2020-01-06 18：25：00</p>
+										</div>
+									</li>
+									<li class="list-item-meta">
+										<div class="list-item-meta-avatar">
+											<div class="image-box">
+												<img src="images/bg-default.jpg" alt="">
+											</div>
+										</div>
+										<div class="list-item-meta-content">
+											<p class="text">张三</p>
+											<p class="text">助理值班员</p>
+											<p class="text">2020-01-06 18：25：00</p>
+										</div>
+									</li>
+									<li class="list-item-meta">
+										<div class="list-item-meta-avatar">
+											<div class="image-box">
+												<img src="images/bg-default.jpg" alt="">
+											</div>
+										</div>
+										<div class="list-item-meta-content">
+											<p class="text">张三</p>
+											<p class="text">助理值班员</p>
+											<p class="text">2020-01-06 18：25：00</p>
+										</div>
+									</li>
+								</ul>
+								<div class="moc-tabs-content" tabs-title="记事栏">
+									<a href="javascript:;" class="record-column-add"><i class="icon icon-add"></i>添加记事栏内容</a>
+									<div class="security-calendar-search">
+										<form class="form-line">
+											<input type="text" class="input-date" onclick="WdatePicker({dateFmt:'yyyy/MM/dd'})" placeholder="开始时间">
+											<span class="form-label-static">至</span>
+											<input type="text" class="input-date" onclick="WdatePicker({dateFmt:'yyyy/MM/dd'})" placeholder="结束时间">
+										    <a class="btn btn-info" href="javascript:;">搜索</a>
+										</form>
+									</div>
+									<ul class="record-column-ul">
+										<li class="record-column-li" data-id="111">
+											<dl class="list-item-action">
+												<dt>
+													<a class="btn-text" data-toggle="edit" href="javascript:;">[编辑]</a>
+													<a class="btn-text btn-text-error" data-toggle="delete" href="javascript:;">[删除]</a>
+												</dt>
+												<dd><i></i>发布人：<span class="text-primary js-name">张三</span></dd>
+											</dl>
+											<p class="list-item-action">发布内容：<span class="text-color js-text">可以新增或删除记事标签。新标签时可以勾选到时提醒并设置提醒时间，间后闪烁提醒</span><a class="btn-text m-l-4" href="javascript:;">[展开]</a></p>
+											<p class="list-item-action">提醒时间：<span class="text-color js-time">2020-01-06 22:00</span><a class="btn-text btn-text-muted m-l-4" data-toggle="remind" href="javascript:;">[取消提醒]</a></p>
+											<p class="list-item-action">所属日期：<span class="text-brown js-date">2020-01-06</span></p>
+										</li>
+										
+										
+										<li class="record-column-li">
+											<dl class="list-item-action">
+												<dt>
+													<a class="btn-text" href="javascript:;">[编辑]</a>
+													<a class="btn-text btn-text-error" href="javascript:;">[删除]</a>
+												</dt>
+												<dd>发布人：<span class="text-primary">张三</span></dd>
+											</dl>
+											<p class="list-item-action">发布内容：<span class="text-color">可以新增或删除记事标签。新标签时可以勾选到时提醒并设置提醒时间，间后闪烁提醒</span><a class="btn-text m-l-4" href="javascript:;">[展开]</a></p>
+											<p class="list-item-action">提醒时间：<span class="text-color">2020-01-06 22:00</span><a class="btn-text btn-text-muted m-l-4" href="javascript:;">[已取消]</a></p>
+											<p class="list-item-action">所属日期：<span class="text-brown">2020-01-06</span></p>
+										</li>
+										<li class="record-column-li">
+											<dl class="list-item-action">
+												<dt>
+													<a class="btn-text" href="javascript:;">[编辑]</a>
+													<a class="btn-text btn-text-error" href="javascript:;">[删除]</a>
+												</dt>
+												<dd>发布人：<span class="text-primary">张三</span></dd>
+											</dl>
+											<p class="list-item-action">发布内容：<span class="text-color">可以新增或删除记事标签。新标签时可以勾选到时提醒并设置提醒时间，间后闪烁提醒</span><a class="btn-text m-l-4" href="javascript:;">[展开]</a></p>
+											<p class="list-item-action">提醒时间：无</p>
+											<p class="list-item-action">所属日期：<span class="text-brown">2020-01-06</span></p>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page-footer">
+				<div class="boxs first-boxs">
+					<div class="boxs-head">
+						<span class="top-30">磁贴</span>
+						<a href="javascript:;" class="toggle-btn"><i class="icon icon-left-arrow"></i></a>
+					</div>
+					<div class="boxs-body">
+						<div class="toolbar">
+							<a class="tool-item-reset" href="javascript:;">重置</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">封锁</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">区间封锁</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">占用</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">铁鞋</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">道岔检修</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">股道占用</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">区间停电</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">停电</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">客车占用</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">电力</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">内燃</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">禁锢器</a>
+							<a class="tool-item" data-type="1222" data-system="system1222" draggable="true" ondragstart="dragStart(event)" ondragend="dragEnd(event)" href="javascript:;">有电</a>
+						</div>
+					</div>
+				</div>
+				<div class="boxs second-boxs">
+					<div class="boxs-head">
+						<span class="top-30">防溜器具</span>
+						<a href="javascript:;" class="toggle-btn"><i class="icon icon-left-arrow"></i></a>
+					</div>
+					<div class="boxs-body">
+						<div class="flexbox">
+							<div class="flexbox-body">
+								<div class="flexbox-body-inner">
+									<ul class="anti-device-ul">
+										<li class="anti-device-li" data-id="111" data-type="shoes" data-state="2">
+											<i class="icon icon-shoes"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="112" data-type="shoes" data-state="2">
+											<i class="icon icon-shoes icon-orange"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="113" data-type="shoes" data-state="1">
+											<i class="icon icon-shoes icon-blue-light"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="114" data-type="shoes" data-state="2">
+											<i class="icon icon-shoes icon-red"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="115" data-type="shoes" data-state="0">
+											<i class="icon icon-shoes icon-grey"></i>
+											<p>D1-2</p>
+										</li>
+									</ul>
+									<ul class="anti-device-ul">
+										<li class="anti-device-li" data-id="116" data-type="fastener" data-state="2">
+											<i class="icon icon-fastener"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="117" data-type="fastener" data-state="2">
+											<i class="icon icon-fastener icon-orange"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="118" data-type="fastener" data-state="1">
+											<i class="icon icon-fastener icon-blue-light"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="119" data-type="fastener" data-state="2">
+											<i class="icon icon-fastener icon-red"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="120" data-type="fastener" data-state="0">
+											<i class="icon icon-fastener icon-grey"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="121" data-type="fastener" data-state="2">
+											<i class="icon icon-fastener"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="122" data-type="fastener" data-state="2">
+											<i class="icon icon-fastener icon-orange"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="123" data-type="fastener" data-state="1">
+											<i class="icon icon-fastener icon-blue-light"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="124" data-type="fastener" data-state="2">
+											<i class="icon icon-fastener icon-red"></i>
+											<p>D1-2</p>
+										</li>
+										<li class="anti-device-li" data-id="125" data-type="fastener" data-state="0">
+											<i class="icon icon-fastener icon-grey"></i>
+											<p>D1-2</p>
+										</li>
+									</ul>
+								</div>
+							</div>
+							<div class="flexbox-foot">
+								<div class="page-tips">
+									<i class="icon icon-warning"></i>
+									<p>出入库超时</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			<section class="page-left-top">
+				<div class="page-tips">
+					<i class="icon icon-indicator"></i>
+					<p>设备掉线</p>
+				</div>
+				<div class="page-tips">
+					<i class="icon icon-battery"></i>
+					<p>电池欠压</p>
+				</div>
+				<div class="page-tips">
+					<i class="icon icon-warning"></i>
+					<p>防溜失效</p>
+				</div>
+				<div class="page-tips">
+					<i class="icon icon-danger"></i>
+					<p>带鞋开车</p>
+				</div>
+				<div class="page-tips">
+					<i class="icon icon-clock"></i>
+					<p>设备出入库预警</p>
+				</div>
+			</section>
+		</div>
+		<!-- page-bodier end -->
+    </div>
+    <!-- page-container end -->
+	
+	<!-- 模态框（Modal） start -->
+	<!-- 给车辆添加防溜措施 -->
+	<div class="modal fade" id="addTrainStepModal">
+	    <div class="modal-dialog modal-draggable" style="width: 850px;">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"></button>
+	                <p class="modal-title">检查记录</p>
+	            </div>
+	            <div class="modal-body">
+					
+					<form class="form-line">
+						<p class="m-b-10"><strong class="text-yellow">东向防溜</strong></p>
+						<section class="clone-location" location="append">
+							<div class="clone-row">
+								<div class="clone-row-content">
+									<div class="row">
+										<div class="form-group">
+											<label class="form-label">防溜器具：</label>
+											<div class="form-content">
+												<div class="select-box">
+												    <select class="select-2">
+												        <option value="0">请选择</option>
+												        <optgroup label="直辖市">
+												            <option value="1">北京</option>
+												            <option value="2">上海</option>
+												            <option value="3">天津</option>
+												            <option value="4">重庆</option>
+												        </optgroup>
+												        <optgroup label="东三省">
+												            <option value="5">辽宁省</option>
+												            <option value="6">吉林省</option>
+												            <option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+												        </optgroup>
+												    </select>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="form-label">设备编号：</label>
+											<div class="form-content">
+												<div class="select-box">
+												    <select class="select-2">
+												        <option value="0">请选择</option>
+												        <optgroup label="直辖市">
+												            <option value="1">北京</option>
+												            <option value="2">上海</option>
+												            <option value="3">天津</option>
+												            <option value="4">重庆</option>
+												        </optgroup>
+												        <optgroup label="东三省">
+												            <option value="5">辽宁省</option>
+												            <option value="6">吉林省</option>
+												            <option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+												        </optgroup>
+												    </select>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="form-label">车号：</label>
+											<div class="form-content">
+												<div class="input-box">
+													<input type="text" class="text">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="clone-row-tools">
+									<a class="clone-add-btn" href="cloneTemplate-row">[新增一行]</a>
+								</div>  
+							</div>
+						</section>
+						<p class="m-b-10"><strong class="text-yellow">西向防溜</strong></p>
+						<section class="clone-location" location="append">
+							<div class="clone-row">
+								<div class="clone-row-content">
+									<div class="row">
+										<div class="form-group">
+											<label class="form-label">防溜器具：</label>
+											<div class="form-content">
+												<div class="select-box">
+												    <select class="select-2">
+												        <option value="0">请选择</option>
+												        <optgroup label="直辖市">
+												            <option value="1">北京</option>
+												            <option value="2">上海</option>
+												            <option value="3">天津</option>
+												            <option value="4">重庆</option>
+												        </optgroup>
+												        <optgroup label="东三省">
+												            <option value="5">辽宁省</option>
+												            <option value="6">吉林省</option>
+												            <option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+												        </optgroup>
+												    </select>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="form-label">设备编号：</label>
+											<div class="form-content">
+												<div class="select-box">
+												    <select class="select-2">
+												        <option value="0">请选择</option>
+												        <optgroup label="直辖市">
+												            <option value="1">北京</option>
+												            <option value="2">上海</option>
+												            <option value="3">天津</option>
+												            <option value="4">重庆</option>
+												        </optgroup>
+												        <optgroup label="东三省">
+												            <option value="5">辽宁省</option>
+												            <option value="6">吉林省</option>
+												            <option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+															<option value="5">辽宁省</option>
+															<option value="6">吉林省</option>
+															<option value="7">黑龙江省</option>
+												        </optgroup>
+												    </select>
+												</div>
+											</div>
+										</div>
+										<div class="form-group">
+											<label class="form-label">车号：</label>
+											<div class="form-content">
+												<div class="input-box">
+													<input type="text" class="text">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="clone-row-tools">
+									<a class="clone-add-btn" href="cloneTemplate-row">[新增一行]</a>
+								</div>  
+							</div>
+						</section>
+						<div class="text-center">
+							<button class="btn btn-info" type="button" id="addTrainStep">确定</button>
+						</div>
+					</form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- 车辆添加 -->
+	<div class="modal fade" id="addStockModal">
+	    <div class="modal-dialog modal-draggable" style="width: 850px;">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"></button>
+	                <p class="modal-title">车辆添加</p>
+	            </div>
+	            <div class="modal-body">
+					<form class="form-line">
+						<div class="row">
+							<div class="form-group">
+								<label class="form-label">添加车次：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<input type="text" class="text" id="addTrainNumber">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group">
+								<label class="form-label">东侧车号：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<input type="text" class="text" id="addTrainNumberEast">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label">西侧车号：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<input type="text" class="text" id="addTrainNumberWest">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label">车数：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<input type="text" class="text" id="addTrainNumberOtal">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<button class="btn btn-info" type="button" id="addTrain">确定</button>
+						</div>
+					</form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- 重点事项 -->
+	<div class="modal fade" id="trainThingModal">
+	    <div class="modal-dialog modal-draggable" style="width: 560px;">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"></button>
+	                <p class="modal-title">重点事项</p>
+	            </div>
+	            <div class="modal-body">
+					<form class="form-line label-width-80">
+						<div class="row">
+							<div class="form-group">
+								<label class="form-label">车次：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<input type="text" class="text" id="trainThingNumber" readonly="readonly">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group">
+								<label class="form-label">内容：</label>
+								<div class="form-content">
+									<div class="textarea-box" style="width: 420px;">
+									    <textarea class="textarea" rows="8" id="trainThingContent" readonly="readonly"></textarea>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<button class="btn btn-info" type="button" id="trainThingEdit">编辑</button>
+							<button class="btn btn-info hide m-l-0" type="button" id="trainThingFix">确定</button>
+						</div>
+					</form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- 点击防溜器具表格里面的 检查记录 -->
+	<div class="modal fade" id="recordModal">
+	    <div class="modal-dialog modal-draggable" style="width: 550px;">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"></button>
+	                <p class="modal-title">检查记录</p>
+	            </div>
+	            <div class="modal-body">
+	                <div class="form-inline label-width-160 add-device-item">
+	                    <strong class="text-yellow">(S)首部防溜</strong>
+	                    <div class="row m-t-10">
+	                        <div class="col-4">防溜器具：<span class="text-check-blue">手闸</span></div>
+	                        <div class="col-4">设备编号：<span class="text-green">12131</span></div>
+	                        <div class="col-4">防溜实施人：<span class="text-check-pink">赵弟栋</span></div>
+	                    </div>
+	                </div>
+	                <div class="form-inline label-width-160 add-device-item p-l-40">
+	                    <ul class="timeLine" style="height: 400px;overflow-y: scroll">
+	                        <li class="timeLine-title">
+	                            <div class="con"></div>
+	                        </li>
+	                        <li>
+	                            <div class="con">
+	                                <p class="text-check-blue">2019-12-12 18:26:11</p>
+	                                <p><span class="text-check-blue">防溜检查</span> <span class="text-check-pink">赵弟栋</span> 备注：防溜状态良好，未出现松动迹象。</p>
+	                                <div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="con">
+	                                <p class="text-check-blue">2019-12-12 18:26:11</p>
+	                                <p><span class="text-check-blue">防溜检查</span> <span class="text-check-pink">赵弟栋</span> 备注：防溜状态良好，未出现松动迹象。</p>
+	                                <div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="con">
+	                                <p class="text-check-blue">2019-12-12 18:26:11</p>
+	                                <p><span class="text-check-blue">防溜检查</span> <span class="text-check-pink">赵弟栋</span> 备注：防溜状态良好，未出现松动迹象。</p>
+	                                <div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                    <div class="check-img">
+	                                        <a href="images/check-img.png" data-lightbox="detail"><img src="images/check-img.png"></a>
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </li>
+	                        <li>
+	                            <div class="con">css时间轴 - 样式</div>
+	                        </li>
+	                        <li>
+	                            <div class="con">css时间轴 - 样式</div>
+	                        </li>
+	                        <li>
+	                            <div class="con">css时间轴 - 样式</div>
+	                        </li>
+	                        <li>
+	                            <div class="con">css时间轴 - 样式</div>
+	                        </li>
+	                        <li>
+	                            <div class="con">
+	                                特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；特别长的文字显示效果；
+	                            </div>
+	                        </li>
+	                        <li class="on">
+	                            <div class="con">css时间轴 - 样式内容能容纳</div>
+	                        </li>
+	                    </ul>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<div class="modal fade" id="inspectModal">
+	    <div class="modal-dialog modal-draggable" style="width: 500px;">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"></button>
+	                <p class="modal-title">车辆检查</p>
+	            </div>
+	            <div class="modal-body">
+					<form class="form-horizontal label-width-80">
+						<div class="form-group">
+							<label class="form-label">检查人：</label>
+							<div class="form-content">
+								<div class="input-box" style="width: 180px;">
+									<input type="text" class="text">
+								</div>
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="form-label">照片：</label>
+							<div class="form-content">
+								<div class="upload-box">
+								    <div id="webuploader1"></div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<button class="btn btn-info" type="button">确定</button>
+						</div>
+					</form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- 添加记事栏内容 -->
+	<div class="modal fade" id="addRecordColumn">
+	    <div class="modal-dialog modal-draggable" style="width: 960px;">
+	        <div class="modal-content">
+	            <div class="modal-header">
+	                <button type="button" class="modal-close" data-dismiss="modal" aria-label="Close"></button>
+	                <p class="modal-title">添加记事栏内容</p>
+	            </div>
+	            <div class="modal-body">
+					<form class="form-line label-width-100" data-Validform="Validform">
+						<div class="row">
+							<div class="form-group">
+								<label class="form-label">添加人：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<input type="text" class="text" datatype="*">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group">
+								<label class="form-label">发布内容：</label>
+								<div class="form-content">
+									<div class="textarea-box" style="width: 810px;">
+									    <textarea class="textarea" rows="4" datatype="*"></textarea>
+									</div>
+									<div class="form-checktip"></div>
+								</div>
+							</div>
+						</div>
+						<div class="row">
+							<div class="form-group">
+								<label class="form-label">所属日期：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<input type="text" class="text" onclick="WdatePicker({dateFmt:'yyyy/MM/dd HH:mm'})" datatype="*">
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label">是否提醒：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<div class="icheck-box">
+										    <label class="icheck-label">
+										        <input class="icheck-primary" name="demo.radio" type="radio" value="1">是
+										    </label>
+										    <label class="icheck-label">
+										        <input class="icheck-primary" name="demo.radio" type="radio" value="2">否
+										    </label>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="form-group">
+								<label class="form-label">提醒时间：</label>
+								<div class="form-content">
+									<div class="input-box">
+										<input type="text" class="text" onclick="WdatePicker({dateFmt:'yyyy/MM/dd HH:mm'})">
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="text-center">
+							<button class="btn btn-info" type="button">确定</button>
+						</div>
+					</form>
+	            </div>
+	        </div>
+	    </div>
+	</div>
+	<!-- 模态框（Modal） end -->
+
+	<!-- 添加防溜器具 新增一行的备用模板 start -->
+	<div class="clone-row clone-template" id="cloneTemplate-row">
+		<div class="clone-row-content">
+			<div class="row">
+				<div class="form-group">
+					<label class="form-label">防溜器具：</label>
+					<div class="form-content">
+						<div class="select-box">
+							<select class="select-2-template">
+								<option value="0">请选择</option>
+								<optgroup label="直辖市">
+									<option value="1">北京</option>
+									<option value="2">上海</option>
+									<option value="3">天津</option>
+									<option value="4">重庆</option>
+								</optgroup>
+								<optgroup label="东三省">
+									<option value="5">辽宁省</option>
+									<option value="6">吉林省</option>
+									<option value="7">黑龙江省</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="form-label">设备编号：</label>
+					<div class="form-content">
+						<div class="select-box">
+							<select class="select-2-template">
+								<option value="0">请选择</option>
+								<optgroup label="直辖市">
+									<option value="1">北京</option>
+									<option value="2">上海</option>
+									<option value="3">天津</option>
+									<option value="4">重庆</option>
+								</optgroup>
+								<optgroup label="东三省">
+									<option value="5">辽宁省</option>
+									<option value="6">吉林省</option>
+									<option value="7">黑龙江省</option>
+									<option value="5">辽宁省</option>
+									<option value="6">吉林省</option>
+									<option value="7">黑龙江省</option>
+									<option value="5">辽宁省</option>
+									<option value="6">吉林省</option>
+									<option value="7">黑龙江省</option>
+									<option value="5">辽宁省</option>
+									<option value="6">吉林省</option>
+									<option value="7">黑龙江省</option>
+								</optgroup>
+							</select>
+						</div>
+					</div>
+				</div>
+				<div class="form-group">
+					<label class="form-label">车号：</label>
+					<div class="form-content">
+						<div class="input-box">
+							<input type="text" class="text">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="clone-row-tools">
+			<a class="clone-remove-btn" href="javascript:;">[删除本行]</a>
+		</div>  
+	</div>
+	<!-- 添加防溜器具 新增一行的备用模板 end -->
+
+	<!-- 右键弹出框 start -->
+	<!-- 火车 -->
+	<div class="contextmenu-menu" id="contextmenu-b">
+	    <ul class="contextmenu-group">
+	        <li class="contextmenu-item">
+	            <a id="trainAddStep" href="javascript:;"><i class="icon icon-addStep"></i>添加防溜器具</a>
+	        </li>
+	        <li class="contextmenu-item">
+	            <a id="trainLeave" href="javascript:;"><i class="icon icon-leave"></i>站场车辆驶离</a>
+	        </li>
+	        <li class="contextmenu-item">
+	            <a id="trainThing" href="javascript:;"><i class="icon icon-thing"></i>重点事项</a>
+	        </li>
+	    </ul>
+	</div>
+	<!-- 防溜表格 -->
+	<div class="contextmenu-menu" id="contextmenu-table">
+	    <table class="table table-bordered table-hover">
+	        <colgroup>
+	        </colgroup>
+	        <thead>
+	        <tr>
+	            <th>防溜器具</th>
+	            <th>编号</th>
+	            <th>车号</th>
+	            <th>状态</th>
+	            <th>操作</th>
+	        </tr>
+	        </thead>
+	        <tbody>
+				<tr>
+					<td>铁鞋</td>
+					<td>ZY-1</td>
+					<td>31267</td>
+					<td>布防中</td>
+					<td>
+						<a class="btn-text btn-text-success" data-toggle="record" href="javascript:;">检查记录</a>
+						<a class="btn-text btn-text-success" data-toggle="inspect"  href="javascript:;">检查</a>
+						<a class="btn-text btn-text-error" data-toggle="remove" href="javascript:;">撤除</a>
+					</td>
+				</tr>
+	        </tbody>
+	    </table>
+	
+	</div>
+	<!-- 火车 -->
+	<div class="contextmenu-menu min" id="contextmenu-in">
+	    <ul class="contextmenu-group">
+	        <li class="contextmenu-item">
+	            <a id="stepIn" href="javascript:;">入库</a>
+	        </li>
+	    </ul>
+	</div>
+	<!-- 火车 -->
+	<div class="contextmenu-menu min" id="contextmenu-out">
+	    <ul class="contextmenu-group">
+	        <li class="contextmenu-item">
+	            <a id="stepOut" href="javascript:;">出库</a>
+	        </li>
+	    </ul>
+	</div>
+	<!-- 右键弹出框 end -->
+	
+	
+    <!-- 调取代码插件 -->
+    <script type="text/javascript">
+		var appData = {
+			/**
+			 * 股道数据
+			 */
+			trackData: trackData,
+			/**
+			 * 火车数据
+			 */
+			trainData: [
+				{
+					"id": 1,
+					"numberWest": '65172',		// 西侧车号
+					"number": 'k1472',			// 车次
+					"numberEast": '31267',		// 东侧车号
+					"otal": '',					// 车数
+					"track": '4-744',			// 所在股道
+					"state": "y",				// 是否正常
+					"thing": "（1）引起特别风险的事项；\n（2）实施审计程序的结果，该结果表明财务信息可能存在重大错报，或需要修正以前对重大错报风险的评估和针对这些风险拟采取的应对措施；\n（3）导致注册会计师难以实施必要审计程序的情形；\n（4）导致出具非标准审计报告的事项。",
+					"step": [
+						{
+							"id": 1001,
+							"name": "西2-10",	// 器具编号
+							"text": '铁鞋',		// 器具编号
+							"direction": "l",	// 所在方向
+							"type": "shoes",	// 类型		shoes：铁鞋  fastener：紧固器  brake：手闸
+							"state": "n"		// 是否正常
+						},
+						{
+							"id": 1002,
+							"name": "凹2",
+							"text": '紧固器',
+							"direction": "l",
+							"type": "fastener",
+							"state": "y"
+						},
+						{
+							"id": 1003,
+							"name": "凹2",
+							"text": '手闸',
+							"direction": "l",
+							"type": "brake",
+							"state": "y"
+						},
+						{
+							"id": 1004,
+							"name": "1",
+							"text": '铁鞋',
+							"direction": "r",
+							"type": "shoes",
+							"state": "y"
+						},
+						{
+							"id": 1005,
+							"name": "1",
+							"text": '紧固器',
+							"direction": "r",
+							"type": "fastener",
+							"state": "n"
+						},
+						{
+							"id": 1006,
+							"name": "1",
+							"text": '手闸',
+							"direction": "r",
+							"type": "brake",
+							"state": "n"
+						}
+					]
+				},
+				{
+					"id": 1,
+					"numberWest": '65172',		// 西侧车号
+					"number": 'k1472',			// 车次
+					"numberEast": '31267',		// 东侧车号
+					"otal": '',					// 车数
+					"track": '3-798',			// 所在股道
+					"state": "n",				// 是否正常
+					"thing": "（1）引起特别风险的事项；\n（2）实施审计程序的结果，该结果表明财务信息可能存在重大错报，或需要修正以前对重大错报风险的评估和针对这些风险拟采取的应对措施；\n（3）导致注册会计师难以实施必要审计程序的情形；\n（4）导致出具非标准审计报告的事项。",
+					
+				}
+			],
+			/**
+			 * 点击股道，添加火车时，选中的股道Id
+			 */
+			checkedTrackId: '',
+			/**
+			 * 右键点击火车时，后续所需要的数据
+			 */
+			trainContextmenu: {
+				id:'',
+				number:'',
+				thing:'',
+				length:''
+			},
+			/**
+			 * 右键点击防溜器具时，后续需要的数据
+			 */
+			stepClick: {
+				id:'',			// 防溜器具的id
+				text:'',		// 防溜器具的text
+				name:'',		// 防溜器具的name
+				trainId:'',		// 火车的id
+				trainNumber:''	// 火车的车号
+			},
+			/**
+			 * 磁贴 相关的数据
+			 */
+			stockToolList:[
+				{
+				    "id": '854884-46884-486133',
+				    "x": '2043',
+				    "y": '2103',
+				    "type": '1555',
+				    "text": '例子',
+				    "system": 'dededc'
+				},
+				{
+				    "id": '854884-46884-48612233',
+				    "x": '2443',
+				    "y": '2103',
+				    "type": '1555',
+				    "text": '例子2',
+				    "system": 'dededc'
+				}
+			],
+			/**
+			 * 防溜工具的入库、出库的存储字段
+			 */
+			stepSetType:{
+				id:'',
+				type:'',
+				state:''
+			}
+		}
+		
+		
+        $(function(){
+			/**
+			 * 画股道
+			 */
+			drawTrack(appData.trackData);
+			
+			/**
+			 * 画火车
+			 */
+			showSpecialTrains(appData.trainData);
+			
+			/**
+			 * 画磁贴
+			 */
+			drawTool( appData.stockToolList );
+			
+			
+			/**
+			 * 点击股道，获取股道的id，保存导数据里面。弹出车辆信息添加框
+			 * 点击添加车联信息的弹框的确定按钮，获取需要的信息，传给后台，成功后关闭modal框
+			 */
+			$(document).on('click', '.stock-market-item', function(event) {
+			    // 获取股道数据
+				appData.checkedTrackId = $(this).data('obj').id;
+				// 清空表单数据
+				$("input", "#addStockModal").not(":button",":reset","hidden","submit").val("");
+				// 显示弹出框
+				$("#addStockModal").modal('show');
+			});
+			$(document).on('click', '#addTrain', function(event) {
+				let train = {
+					id:'',
+					number: $("#addTrainNumber").val(),
+					numberEast: $("#addTrainNumberEast").val(),
+					numberWest: $("#addTrainNumberWest").val(),
+					otal: $("#addTrainNumberOtal").val(),
+					track: appData.checkedTrackId,
+					thing: "（1）引起特别风险的事项；\n（2）实施审计程序的结果，该结果表明财务信息可能存在重大错报，或需要修正以前对重大错报风险的评估和针对这些风险拟采取的应对措施；\n（3）导致注册会计师难以实施必要审计程序的情形；\n（4）导致出具非标准审计报告的事项。",
+					step:[],
+				};
+			    $("#addStockModal").modal('hide');
+			});
+			
+			
+			/**
+			 * 火车的右键事件
+			 * 1.将列表中的功能需要使用的id和重点事项，保存到数据中
+			 * 2.给功能列表进行定位和显示
+			 */
+			$(document).on('contextmenu', '.train-info', function (event) {
+				appData.trainContextmenu.id = $(this).parent().attr('data-train-id');
+				appData.trainContextmenu.number = $(this).children('.train-info-number').text();
+				appData.trainContextmenu.thing = $(this).parent().attr('data-train-thing');
+				appData.trainContextmenu.length = $(this).parent().attr('data-step-length');
+				
+			    event.preventDefault();
+			    var point = {
+			        x: event.pageX,
+			        y: event.pageY
+			    };
+			
+			    var winH = $(window).height(),
+			        winW = $(window).width();
+			    // 鼠标点击后在鼠标当前的位置显示提示框
+			    var contextmenuH = $("#contextmenu-b").show().height(),
+			        contextmenuW = $("#contextmenu-b").width();
+			    point = {
+			        x: event.pageX + contextmenuW >= winW ? event.pageX - (event.pageX + contextmenuW - winW + 20) : event.pageX,
+			        y: event.pageY + contextmenuH >= winH - 20 ? event.pageY - (event.pageY + contextmenuH - winH + 40) : event.pageY
+			    };
+			    $("#contextmenu-b").css({
+			        "left": point.x,
+			        "top": point.y
+			    });
+				
+			    $('.Setting-train-info').removeClass("Setting-train-info");
+			    $(this).addClass('Setting-train-info');
+			    return false;
+			});
+			// 火车右键显示的下拉列编的点击事件
+			$("#contextmenu-b").on("click", "li", function (event) {
+				var operation = $(this).find('a').attr("id");
+			    // 添加防溜设备
+			    if(operation == "trainAddStep") {
+					clearValue($('#addTrainStepModal'));
+					$("#addTrainStepModal").modal('show');
+			    }else if(operation == "trainLeave") {
+			        // 驶离
+			        if (appData.trainContextmenu.length > 0) {
+			            $.mocAlert({
+							type: "warning",
+			                content: "防溜器具未撤除，无法驶离！"
+			            });
+			        } else {
+			            
+			        }
+			    }else if(operation == "trainThing") {
+					$("#trainThingNumber").val(appData.trainContextmenu.number);
+					$("#trainThingContent").val(appData.trainContextmenu.thing);
+					$("#trainThingModal").modal('show');
+			    }
+			});
+			// 点击任意地方消失
+			$(document).on('click', function (event) {
+			    $(".contextmenu-menu").hide();
+			});
+			// 添加火车的防溜措施的确定事件
+			$(document).on('click', '#addTrainStep', function(event) {
+				
+			    $("#addTrainStepModal").modal('hide');
+			});
+			
+			/**
+			 * 重点事项的编辑事件
+			 * 重点事项的确定事件事件
+			 */
+			$(document).on('click', '#trainThingEdit', function(event) {
+				$(this).addClass('hide').siblings().removeClass('hide');
+				$("#trainThingNumber, #trainThingContent").removeAttr("readonly");
+			});
+			$(document).on('click', '#trainThingFix', function(event) {
+				$(this).addClass('hide').siblings().removeClass('hide');
+				$("#trainThingNumber, #trainThingContent").attr("readonly","readonly");
+			});
+			
+			
+			/**
+			 * 铁鞋等防溜器具
+			 */
+			$(document).on('click', '.stock-train-step', function (event) {
+			    
+				appData.stepClick.id = $(this).attr('data-step-id');
+				appData.stepClick.text = $(this).children('.top-text').text();
+				appData.stepClick.name = $(this).children('.top-name').text();
+				appData.stepClick.trainId = $(this).closest('.stock-train-item').attr('data-train-id');
+				appData.stepClick.trainNumber = $(this).closest('.stock-train-item').find('.train-info-number').text();
+
+				event.preventDefault();
+			    var point = {
+			        x: event.pageX,
+			        y: event.pageY
+			    };
+			    var winH = $(window).height(),
+			        winW = $(window).width();
+			    // 鼠标点击后在鼠标当前的位置显示提示框
+			    var contextmenuH = $("#contextmenu-table").show().height(),
+			        contextmenuW = $("#contextmenu-table").width();
+			    point = {
+			        x: event.pageX + contextmenuW >= winW ? event.pageX - (event.pageX + contextmenuW - winW + 20) : event.pageX,
+			        y: event.pageY + contextmenuH >= winH - 20 ? event.pageY - (event.pageY + contextmenuH - winH + 40) : event.pageY
+			    };
+			    $("#contextmenu-table").css({
+			        "left": point.x,
+			        "top": point.y
+			    });
+			
+			    $('.Setting-train-info').removeClass("Setting-train-info");
+			    $(this).addClass('Setting-train-info');
+			    return false;
+			});
+			// 检查记录
+			$(document).on('click', '[data-toggle="record"]', function(event) {
+				
+				console.log( appData.stepClick );
+				
+				$("#recordModal").modal('show');
+			});
+			// 检查
+			$(document).on('click', '[data-toggle="inspect"]', function(event) {
+				console.log( appData.stepClick );
+				$("#inspectModal").modal('show');
+			});
+			$(document).on('click', '[data-toggle="remove"]', function(event) {
+				console.log( appData.stepClick );
+
+				$.mocAlert({
+				    content: "撤除防溜器具"
+				});
+			});
+			
+			
+			
+			
+			/**
+			 * 日历消息提醒
+			 */
+			$(document).on('click', '#messageBtn', function(event) {
+			    $.mocAlert({
+			    	headTxt: '日历消息提醒',
+			        content: "展示当日年月日星期，点开可查看完整日历并添加注意事项提醒，到达提醒时间后，闪烁提示，点击后展示详细提醒信息。"
+			    }).done(function() {
+				    $.mocAlert({
+				    	content    : "您点击了----确定"
+				    });
+				}).fail(function() {
+					$.mocAlert({
+						content    : "您点击了----取消"
+					});
+				});
+			});
+			
+			/**
+			 * 添加记事栏内容
+			 */
+			$(document).on('click', '.record-column-add', function(event) {
+			    $('#addRecordColumn').modal('show');
+				
+				// 清空选中
+				$("#addRecordColumn input, #addRecordColumn textarea").not(":radio","hidden").val("");
+				$("#addRecordColumn .icheck-primary").iCheck('uncheck');
+				
+			});
+			// 编辑
+			$(document).on('click', '[data-toggle="edit"]', function(event) {
+			    $('#addRecordColumn').modal('show');
+				
+				// 获取值
+				let $list = $(this).closest('.record-column-li');
+				let name = $list.find('.js-name').text();
+				let text = $list.find('.js-text').text();
+				let time = $list.find('.js-time').text();
+				let date = $list.find('.js-date').text();
+				
+				console.log(name, text, time, date);
+			});
+			// 删除
+			$(document).on('click', '[data-toggle="delete"]', function(event) {
+				// 获取值
+				let id = $(this).closest('.record-column-li').attr('data-id');
+				
+				alert(id);
+			});
+			// 取消提醒
+			$(document).on('click', '[data-toggle="remind"]', function(event) {
+				// 获取值
+				let id = $(this).closest('.record-column-li').attr('data-id');
+				
+				alert(id);
+			});
+			
+			
+			
+			/**
+			 * 防溜工具的入库出库
+			 */
+			$(document).on('contextmenu', '.anti-device-li', function (event) {
+				appData.stepSetType.id = $(this).attr('data-id');
+				appData.stepSetType.type = $(this).attr('data-type');
+				appData.stepSetType.state = $(this).attr('data-state');
+				
+			    event.preventDefault();
+			    var point = {
+			        x: event.pageX,
+			        y: event.pageY
+			    };
+			    var winH = $(window).height(),
+			        winW = $(window).width();
+				
+				
+				$(".contextmenu-menu").hide();
+				if( appData.stepSetType.state == 0 ){
+					// 鼠标点击后在鼠标当前的位置显示提示框
+					var contextmenuH = $("#contextmenu-out").show().height(),
+						contextmenuW = $("#contextmenu-out").width();
+					point = {
+						x: event.pageX + contextmenuW >= winW ? event.pageX - (event.pageX + contextmenuW - winW + 20) : event.pageX,
+						y: event.pageY + contextmenuH >= winH - 20 ? event.pageY - (event.pageY + contextmenuH - winH + 40) : event.pageY
+					};
+					$("#contextmenu-out").css({
+						"left": point.x,
+						"top": point.y
+					});
+				}else if( appData.stepSetType.state == 1 ){
+					// 鼠标点击后在鼠标当前的位置显示提示框
+					var contextmenuH = $("#contextmenu-in").show().height(),
+						contextmenuW = $("#contextmenu-in").width();
+					point = {
+						x: event.pageX + contextmenuW >= winW ? event.pageX - (event.pageX + contextmenuW - winW + 20) : event.pageX,
+						y: event.pageY + contextmenuH >= winH - 20 ? event.pageY - (event.pageY + contextmenuH - winH + 40) : event.pageY
+					};
+					$("#contextmenu-in").css({
+						"left": point.x,
+						"top": point.y
+					});
+				}
+			    return false;
+			});
+			// 入库
+			$(document).on('click', '#stepIn', function(event) {
+				
+				alert( '入库' );
+				console.log( appData.stepSetType );
+				/**
+				 * 请求成功后
+				 */
+				$('[data-id="'+ appData.stepSetType.id +'"]').attr('data-state', '0');
+				$('[data-id="'+ appData.stepSetType.id +'"] .icon').addClass('icon-grey').removeClass('icon-blue-light');
+			});
+			// 出库
+			$(document).on('click', '#stepOut', function(event) {
+				
+				alert( '出库' );
+				console.log( appData.stepSetType );
+				/**
+				 * 请求成功后
+				 */
+				$('[data-id="'+ appData.stepSetType.id +'"]').attr('data-state', '1');
+				$('[data-id="'+ appData.stepSetType.id +'"] .icon').removeClass('icon-grey').addClass('icon-blue-light');
+			});
+			
+			
+			
+			
+			/**
+			 * 车辆检查 上传的调用
+			 */
+			$('#webuploader1').diyUpload({
+			    url: 'webuploader/server/fileupload.php',
+			    // 是否自动上传
+			    auto: true,
+			    buttonText: '选择文件',
+			    formData : { 'xxsm': 22 },
+			    fileNumLimit: 1,                    // 允许上传的张数
+			    // 提示信息
+			    success: function(data) {
+			        console.info(data);
+			    },
+			    // 错误的提示信息
+			    error: function(err) {
+			        console.info(err);
+			    }
+			});
+			
+			
+			/**
+			 * 调用事件方法
+			 * ajax 请求后获取的服务器时间
+			 */
+			var myDate = new Date;
+			startCurrentTime(myDate);
+        });
+    </script>
+
+</body>
+</html>
