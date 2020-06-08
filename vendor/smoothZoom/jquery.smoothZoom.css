@@ -1,0 +1,30 @@
+.smooth_zoom_preloader {
+    background-image: url(preloader.gif)
+}
+.smooth_zoom_icons {
+    background-image: url(icons.png)
+}
+.smooth_zoom_preloader > img {
+    box-shadow: none !important
+}
+.landmarks {
+    font-size: 12px;
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    color: #fff
+}
+.landmarks .item {
+    position: absolute;
+    display: none;
+    text-align: center
+}
+.landmarks .mark .text {
+    width: 16px;
+    height: 16px;
+    margin: 0 0 -8px 0;
+    border-radius: 16px;
+    background: red;
+    background-color: red
+}
